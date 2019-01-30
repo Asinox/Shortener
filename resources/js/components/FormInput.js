@@ -12,7 +12,8 @@ class FormInput extends Component {
             emptyField: false,
             short:[],
             loading: false,
-            id: ''
+            id: '',
+            error: false
         };
 
         this.getLongUrl = this.getLongUrl.bind(this);                    
@@ -20,27 +21,36 @@ class FormInput extends Component {
     }
 
     shortUrl(){   
-        this.setState({loading: true, short:[]});
+        this.setState({loading: true, short:[], error: false});
 
         if(this.state.longUrl){
 
             const longUrl  = this.state.longUrl;
 
             fetch(`/api/shorts/process/?url=${ longUrl }`)
-            .then((results) => {          
-                return results.json();
-            }).then((data) => {
+            .then((results) => {
+                console.log(results);                                   
+                if(results.ok) {                                   
+                    return results.json();
+                }                
+                //this.setState({error: true});
                 
+            }).then((data) => {
                 this.setState({
                     short: data,
-                    loading: false
+                    loading: false,       
+                    //error: false             
                 });
+                //console.log(this.state.error);
                 this.refs.inputText.value = '';
 
+            }).catch(function(error){
+                console.log('There is something wrong with your link: Not Found',);
             });
         }else{
             this.setState({
-                emptyField: true
+                emptyField: true,
+                //error: true
             });
         }
         
@@ -53,14 +63,15 @@ class FormInput extends Component {
     render(){
  
         const emptyField = this.state.emptyField;
+        const error404 = this.state.error;        
 
         return(
             <div className="row justify-content-md-center">  
                 <div className='col'>
                     <div className='row'>
                         <div className="col pr-0">          
-                            <input ref="inputText" type ='text' autoComplete="off" name="url" className="form-control" placeholder={this.props.placeHolder} value={this.state.longUrl} onChange={this.getLongUrl.bind(this)}/>
-                            {emptyField ? <div className="invalid-tooltip" style={displayError}>Please enter a valid link!</div> : null}
+                            <input ref="inputText" type ='text' autoComplete="off" name="url" className="form-control" placeholder={this.props.placeHolder} value={this.state.longUrl} onChange={this.getLongUrl.bind(this)} onKeyPress={()=>{}}/>
+                            {emptyField || error404 ? <div className="invalid-tooltip" style={displayError}>Please enter a valid link!</div> : null}
                         </div>
                         <div className="col-auto pl-0">
                             <button type="button" onClick={ this.shortUrl.bind(this) } className="btn btn-primary mb-2">SHORTEN</button>

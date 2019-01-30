@@ -1,1 +1,35 @@
-#stage{min-height:450px;padding-top:50px}.logo{font-size:50px}.form-control{border-top-right-radius:0;border-bottom-right-radius:0;padding-top:25px;padding-bottom:25px}.btn{border-top-left-radius:0;border-bottom-left-radius:0;padding:13.5px}.back{text-transform:uppercase;color:#a9a9a9}
+#stage {
+  /*background: 
+  linear-gradient(
+    rgba(223, 197, 197, 0.45), 
+    rgba(223, 197, 197, 0.45)
+  ),
+  url('../../public/images/stage-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  min-height: 450px;
+  padding-top: 50px;
+}
+
+.logo {
+  font-size: 50px;
+}
+
+.form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 13.5px;
+}
+
+.back {
+  text-transform: uppercase;
+  color: darkgray;
+}
+

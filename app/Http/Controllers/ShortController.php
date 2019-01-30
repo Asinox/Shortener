@@ -100,14 +100,17 @@ class ShortController extends Controller
                     $short->save();
     
                     return json_encode($short);
+                }else{
+                    return json_encode(abort(404));
                 }
             }
             
         } catch (ConnectException $e) {
-            echo Psr7\str($e->getRequest());
+            /*echo Psr7\str($e->getRequest());
             if ($e->hasResponse()) {
                 echo Psr7\str($e->getResponse());
-            }
+            }*/
+            return json_encode(abort(404));
         }
     }
 }
