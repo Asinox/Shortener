@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "shortener",
+            "dialect": "MySQL",
+            "name": "Docker",
+            "password": "secret",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root"
+        }
+    ]
+}
