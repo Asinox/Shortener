@@ -59,7 +59,7 @@ class FormInput extends Component {
                 <div className='col'>
                     <div className='row'>
                         <div className="col pr-0">          
-                            <input ref="inputText" type ='text' autoComplete="off" name="url" className="form-control" placeholder={this.props.placeHolder} value={this.state.longUrl} onChange={this.getLongUrl.bind(this)} onKeyPress={this.shortUrl.bind(this)}/>
+                            <input ref="inputText" type ='text' autoComplete="off" name="url" className="form-control" placeholder={this.props.placeHolder} value={this.state.longUrl} onChange={this.getLongUrl.bind(this)}/>
                             {emptyField ? <div className="invalid-tooltip" style={displayError}>Please enter a valid link!</div> : null}
                         </div>
                         <div className="col-auto pl-0">
