@@ -29,7 +29,6 @@ class FormInput extends Component {
 
             fetch(`/api/shorts/process/?url=${ longUrl }`)
             .then((results) => {
-                //console.log(results);                                   
                 if(results.ok) {                                   
                     this.setState({error:false});
                     return results.json();
@@ -41,7 +40,6 @@ class FormInput extends Component {
                     short: data,
                     loading: false,                           
                 });
-                //console.log(this.state.error);
                 this.refs.inputText.value = '';
 
             }).catch(function(error){
