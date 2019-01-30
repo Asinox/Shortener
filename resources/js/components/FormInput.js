@@ -29,17 +29,17 @@ class FormInput extends Component {
 
             fetch(`/api/shorts/process/?url=${ longUrl }`)
             .then((results) => {
-                console.log(results);                                   
+                //console.log(results);                                   
                 if(results.ok) {                                   
+                    this.setState({error:false});
                     return results.json();
                 }                
-                //this.setState({error: true});
+                this.setState({error: true});
                 
             }).then((data) => {
                 this.setState({
                     short: data,
-                    loading: false,       
-                    //error: false             
+                    loading: false,                           
                 });
                 //console.log(this.state.error);
                 this.refs.inputText.value = '';
@@ -50,7 +50,7 @@ class FormInput extends Component {
         }else{
             this.setState({
                 emptyField: true,
-                //error: true
+                error: true
             });
         }
         
