@@ -14,4 +14,7 @@ A small and simple url shortener with Laravel, Reactjs and Docker
 * Clone the repository (https://github.com/Asinox/Shortener)
 * Open your terminal and go inside the new directory Shortener and run `php artisan serve` and now you can visit the URL `http://localhost:8000`
 
+### Database (optional?)
+> The Shortener database is hosted on Heroku, you can review the `.env` file and change it if you want.
+> After change the database (.env) remember just migrate the database with artisan command `php artisan migrate:fresh`
 
