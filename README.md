@@ -18,7 +18,7 @@ A small and simple url shortener with Laravel, Reactjs and Docker
 > The Shortener database is hosted on Heroku, you can review the `.env` file and change it if you want.
 > After change the database (.env) remember just migrate the database with artisan command `php artisan migrate`
 
-### React a note
+### React, a note
 >If there is anything that you want to change about React, you can go inside the resource directory/js and work there with react.
 >Are you done with react?, just go to the root directory and run the command `npm run dev` (to test on development) or `npm run production` for build the production files.
 
