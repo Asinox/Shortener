@@ -1,5 +1,5 @@
 # Shortener
-A small a simple url shortener with laravel and reactjs
+A small and simple url shortener with laravel, reactjs and Docker
 
 ## How to install Shortener
 ### Local installation with Docker
